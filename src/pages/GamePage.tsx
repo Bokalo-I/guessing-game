@@ -26,12 +26,11 @@ const GamePage = () => {
         return;
       }
 
-      const cityName = city.name || city.city;
-      const temperature = await getCityTemperature(cityName, city.countryCode);
+      const temperature = await getCityTemperature(city.name, city.countryCode);
 
       const data: IGame = {
         cityId: city.id,
-        cityName: cityName,
+        cityName: city.name,
         countryName: city.country,
         temperature,
         try: 0,
